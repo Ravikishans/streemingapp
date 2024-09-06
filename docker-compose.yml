@@ -4,7 +4,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    image: ravikishans/streaming:frontend_v0.1
+    image: ravikishans/streamingapp:frontend
     container_name: streaming-frontend
     environment:
       AWS_IP: "0.0.0.0"
@@ -16,7 +16,7 @@ services:
     build:
       context: ./backend/authService
       dockerfile: Dockerfile
-    image: ravikishans/streaming:backend_auth_v0.1
+    image: ravikishans/streamingapp:backend_auth
     container_name: authentication-backend
     environment:
       MONGO_URI: "mongodb+srv://ravikishan:Cluster0@cluster0.y9zohpu.mongodb.net/streemingapp"
@@ -33,7 +33,7 @@ services:
     build:
       context: ./backend/streamingService
       dockerfile: Dockerfile
-    image: ravikishans/streaming:backend_stream_v0.1
+    image: ravikishans/streamingapp:backend_stream
     container_name: stream-backend
     environment:
       MONGO_URI: "mongodb+srv://ravikishan:Cluster0@cluster0.y9zohpu.mongodb.net/streemingapp"
